@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            background-color: yellow;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: rgba(110, 110, 110, 0.8);
+        }
+
+        .div1 {
+            background-color: rgba(200, 100, 100, 0.8);
+            height: 100vh;
+            width: 100%;
+        }
+
+        .div2 {
+            background-color: rgba(100, 200, 100, 0.4);
+        }
+
+        p {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <p>司机端看就看</p>
+        <p>司机端看就看</p>
+        <p>司机端看就看</p>
+        <p>司机端看就看</p>
+        <p>司机端看就看</p>
+        <p>司机端看就看</p>
+        <p>司机端看就看</p>
+        <p>司机端看就看</p>
+    </div>
+</div>
+
+<script>
+    const arr = ['aa', 'bbd', 'r', 'ccss', 'dddd', 'ee']
+    // const arrNew = arr.filter(val => {
+    //     if (val.length > 2) {
+    //         return true
+    //     }
+    //     return false
+    // })
+
+   const item=arr.findIndex(item=>{
+        return 'ccss'===item
+    })
+    console.log('arrNew', item)
+</script>
+
+</body>
+</html>

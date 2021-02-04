@@ -1,0 +1,6 @@
+export const IS_SIDEBAR_OPEN = 'IS_SIDEBAR_OPEN'
+export const SET_TOKEN = 'SET_TOKEN'
+export const SET_USERNAME = 'SET_USERNAME'
+export const SET_AVATAR = 'SET_AVATAR'
+export const SET_ROLES = 'SET_ROLES'
+export const SET_ROUTERS = 'SET_ROUTERS'
