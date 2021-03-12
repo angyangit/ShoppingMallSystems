@@ -18,20 +18,6 @@ export const loginAction = function ({commit, state}, loginInfo) {
         })
     })
 }
-// icon: "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg.jpg"
-// menus: (24) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-// roles: ["超级管理员"]
-// username: "admin"
-// menu
-// createTime: "2020-02-07T08:29:13.000+00:00"
-// hidden: 0
-// icon: "ums"
-// id: 21
-// level: 0
-// name: "ums"
-// parentId: 0
-// sort: 0
-// title: "权限"
 export const getUserinfoAction = function ({commit, state}) {
     return new Promise((resolve, reject) => {
         getUserinfo().then(res => {

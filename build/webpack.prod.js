@@ -1,7 +1,7 @@
 // webpack.prod.js
 // production
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const common = require('./webpack.base');
 const env = require('../config/prod.env')
 
@@ -19,7 +19,7 @@ module.exports = merge(common, {
     mode: 'production',
     output: {
         filename: 'js/[name].[hash:5].js',
-        path: path.resolve(__dirname, '../dist')
+        path: path.resolve(__dirname, '../manage')
     },
     optimization: {
         // 将引入的第三方库文件单独打包
@@ -38,15 +38,6 @@ module.exports = merge(common, {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader'
-            },
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
@@ -69,33 +60,34 @@ module.exports = merge(common, {
                     {
                         loader: 'url-loader',
                         options: {
+                            esModule: false,//不配置导致图片不显示
                             limit: 10240,
                             name: 'imgs/[name].[contenthash:5].[ext]'
                         }
                     },
-                    {
-                        // 对图片进行压缩处理，配置项参考官方文档
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                                quality: 65
-                            },
-                            optipng: {
-                                enabled: false
-                            },
-                            pngquant: {
-                                quality: '65-90',
-                                speed: 4
-                            },
-                            gifsicle: {
-                                interlaced: false
-                            },
-                            webp: {
-                                quality: 75
-                            }
-                        }
-                    }
+                    // {
+                    //     // 对图片进行压缩处理，配置项参考官方文档
+                    //     loader: 'image-webpack-loader',
+                    //     options: {
+                    //         mozjpeg: {
+                    //             progressive: true,
+                    //             quality: 65
+                    //         },
+                    //         optipng: {
+                    //             enabled: false
+                    //         },
+                    //         pngquant: {
+                    //             quality: '65-90',
+                    //             speed: 4
+                    //         },
+                    //         gifsicle: {
+                    //             interlaced: false
+                    //         },
+                    //         webp: {
+                    //             quality: 75
+                    //         }
+                    //     }
+                    // }
                 ]
             }
         ]

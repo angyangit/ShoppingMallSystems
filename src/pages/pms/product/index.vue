@@ -151,30 +151,30 @@
                         </p>
                     </template>
                 </el-table-column>
-                <el-table-column label="排序" width="100" align="center"     sortable
+                <el-table-column label="排序" width="100" align="center" sortable
                                  sort-by='sort'>
                     <template slot-scope="scope">{{scope.row.sort}}</template>
                 </el-table-column>
                 <el-table-column label="SKU库存" width="100" align="center">
                     <template slot-scope="scope">
                         <el-button type="primary" icon="el-icon-edit"
-                                   @click="handleShowSkuEditDialog(scope.$index, scope.row)" circle></el-button>
+                                   @click="handleShowSkuEditDialog(scope.$index, scope.row)">修改</el-button>
                     </template>
                 </el-table-column>
                 <el-table-column label="销量" width="100" align="center">
                     <template slot-scope="scope">{{scope.row.sale}}</template>
                 </el-table-column>
-                <el-table-column label="审核状态" width="100" align="center">
-                    <template slot-scope="scope">
-                        <p>{{scope.row.verifyStatus | verifyStatusFilter}}</p>
-                        <p>
-                            <el-button
-                                    type="text"
-                                    @click="handleShowVerifyDetail(scope.$index, scope.row)">审核详情
-                            </el-button>
-                        </p>
-                    </template>
-                </el-table-column>
+<!--                <el-table-column label="审核状态" width="100" align="center">-->
+<!--                    <template slot-scope="scope">-->
+<!--                        <p>{{scope.row.verifyStatus | verifyStatusFilter}}</p>-->
+<!--                        <p>-->
+<!--                            <el-button-->
+<!--                                    type="text"-->
+<!--                                    @click="handleShowVerifyDetail(scope.$index, scope.row)">审核详情-->
+<!--                            </el-button>-->
+<!--                        </p>-->
+<!--                    </template>-->
+<!--                </el-table-column>-->
                 <el-table-column label="操作" width="160" align="center">
                     <template slot-scope="scope">
                         <p>
@@ -185,17 +185,6 @@
                             <el-button
                                     size="mini"
                                     @click="handleUpdateProduct(scope.$index, scope.row)">编辑
-                            </el-button>
-                        </p>
-                        <p>
-                            <el-button
-                                    size="mini"
-                                    @click="handleShowLog(scope.$index, scope.row)">日志
-                            </el-button>
-                            <el-button
-                                    size="mini"
-                                    type="danger"
-                                    @click="handleDelete(scope.$index, scope.row)">删除
                             </el-button>
                         </p>
                     </template>
@@ -219,12 +208,12 @@
                 title="编辑货品信息"
                 :visible.sync="editSkuInfo.dialogVisible"
                 width="40%">
-            <span>商品货号：</span>
-            <span>{{editSkuInfo.productSn}}</span>
-            <el-input placeholder="按sku编号搜索" v-model="editSkuInfo.keyword" size="small"
-                      style="width: 50%;margin-left: 20px">
-                <el-button slot="append" icon="el-icon-search" @click="handleSearchEditSku"></el-button>
-            </el-input>
+<!--            <span>商品货号：</span>-->
+<!--            <span>{{editSkuInfo.productSn}}</span>-->
+<!--            <el-input placeholder="按sku编号搜索" v-model="editSkuInfo.keyword" size="small"-->
+<!--                      style="width: 50%;margin-left: 20px">-->
+<!--                <el-button slot="append" icon="el-icon-search" @click="handleSearchEditSku"></el-button>-->
+<!--            </el-input>-->
             <el-table style="width: 100%;margin-top: 20px"
                       :data="editSkuInfo.stockList"
                       border>

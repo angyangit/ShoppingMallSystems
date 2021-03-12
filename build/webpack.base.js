@@ -22,35 +22,37 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                use: 'vue-loader',
             },
             {
-                test: /\.(sa|sc|c)ss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader'
-                ]
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
             },
-            {
-                test: /\.(png|jpg|svg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 1,
-                            name: 'imgs/[name].[ext]'
-                        }
-                    }
-                ]
-            },
+            // {
+            //     test: /\.(sa|sc|c)ss$/,
+            //     use: [
+            //         'style-loader',
+            //         'css-loader',
+            //         'postcss-loader',
+            //         'sass-loader'
+            //     ]
+            // },
+            // {
+            //     test: /\.(png|jpg|svg|gif)$/,
+            //     use: [
+            //         {
+            //             loader: 'url-loader',
+            //             options: {
+            //                 limit: 1,
+            //                 name: 'imgs/[name].[ext]'
+            //             }
+            //         }
+            //     ]
+            // },
             {
                 test: /\.(eot|woff2?|ttf|svg)$/,
                 use: [

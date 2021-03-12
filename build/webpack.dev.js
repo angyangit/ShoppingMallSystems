@@ -19,15 +19,40 @@ module.exports = merge(common, {
         //     apiMocker(app, path.resolve('public/mocker.js'));
         // },
         // 监听端口
-        port: 8889,
+        port: 8888,
         // 启动后自动打开网址
-        open: 'http://localhost:8889/',
+        open: 'http://172.20.10.2/:8888/',
         // 让同网域其他设备访问本地服务
-        host: 'localhost'
+        host: '172.20.10.2'
     },
     output: {
         filename: 'js/[name].[hash:5].js',
         path: path.resolve(__dirname, '../dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1,
+                            name: 'imgs/[name].[ext]'
+                        }
+                    }
+                ]
+            }
+        ]
     },
     plugins: [
         new webpack.DefinePlugin({

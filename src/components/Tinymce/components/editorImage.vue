@@ -37,7 +37,7 @@
                 dialogVisible: false,
                 listObj: {},
                 fileList: [],
-                minioUploadUrl: 'http://localhost:8080/minio/upload'
+                minioUploadUrl: process.env.BASE_API+'/minio/upload'
             }
         },
         methods: {

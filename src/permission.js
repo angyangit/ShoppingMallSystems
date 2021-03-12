@@ -26,8 +26,8 @@ router.beforeEach((to, from, next) => {
                         next({...to, replace: true})
                     })
                 }).catch(error => {
-                    this.$message.error(err.message);
-                    next({path: '/'})
+                    // this.$message.error(err.message);
+                    next('/login')
                 })
             } else {
                 console.log('router21232==>', router)
